@@ -1,28 +1,26 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: ./
 command: >-
-  python feature_engineering.py 
-  --input_folder ${{inputs.input_folder}}
-  --prep_data ${{outputs.prep_data}}
+  python ml_training.py 
+  --prep_data ${{inputs.prep_data}}
+  --model_folder ${{outputs.model_folder}}
   --run_mode ${{inputs.run_mode}}
   
 inputs:
-  input_folder:
-    type: uri_folder
-    path: azureml://datastores/workspaceblobstore/paths/mlops_workshop_data/ 
-  run_mode: "remote"
-  
-outputs:
   prep_data:
     type: uri_folder
     path: azureml://datastores/workspaceblobstore/paths/mlops_workshop_data/
+  run_mode: "remote"
     
-    
+outputs:
+  model_folder:
+    type: uri_folder
+    path: azureml://datastores/workspaceblobstore/paths/mlops_workshop_data/
+
 environment:
-  conda_file: ./conda_feature_engineering.yml
+  conda_file: ./conda_ml_training.yml
   image: mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04:latest
-  
 compute: azureml:cpu-cluster
-display_name: feature-engineering
-experiment_name: feature-engineering
-description: feature engineering
+display_name: ml-training
+experiment_name: ml-training
+description: ml-training
