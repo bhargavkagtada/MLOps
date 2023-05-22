@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "\\.github",
+    "\\src",
+    "\\src\\workshop",
+    "\\src\\workshop\\infra"
   ],
   "PreviewInSolutionExplorer": false
 }
