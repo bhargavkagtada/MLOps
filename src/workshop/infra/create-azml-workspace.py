@@ -1,16 +1,14 @@
 # import required libraries
 from azure.ai.ml import MLClient
-from azure.ai.ml.entities import Workspace, Environment, BuildContext
+from azure.ai.ml.entities import Workspace
 from azure.identity import DefaultAzureCredential
 
 
 # Enter details of your subscription
-# IMP: Create a configuration files with your subscription details!
 subscription_id = "cae5edf4-d666-4dd5-a2fe-bf47d8b5fc06"
 resource_group = "rg-msft-bk-mlops-demo"
 workspace = "ws_mlw_mlopsv2"
 
-#Get handle to ML workspace
 ml_client = MLClient(DefaultAzureCredential(), subscription_id, resource_group)
 
 ws_basic = Workspace(
