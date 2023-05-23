@@ -4,9 +4,9 @@ from azure.ai.ml.entities import ComputeInstance, AmlCompute
 from azure.identity import DefaultAzureCredential
 
 # Enter details of your AML workspace
-subscription_id = "cae5edf4-d666-4dd5-a2fe-bf47d8b5fc06"
-resource_group = "rg-msft-bk-mlops-demo"
-workspace = "ws_mlw_mlopsv2"
+subscription_id = ""
+resource_group = ""
+workspace = ""
 
 ml_client = MLClient(
     DefaultAzureCredential(), subscription_id, resource_group, workspace

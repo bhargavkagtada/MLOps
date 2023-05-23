@@ -29,9 +29,9 @@ try:
     ml_client = MLClient.from_config(credential=credential)
 except Exception as ex:
     # enter details of your AML workspace
-    subscription_id = "cae5edf4-d666-4dd5-a2fe-bf47d8b5fc06"
-    resource_group = "rg-msft-bk-mlops-demo"
-    workspace = "ws_mlw_mlopsv2"
+    subscription_id = ""
+    resource_group = ""
+    workspace = ""
 
     # get a handle to the workspace
     ml_client = MLClient(credential, subscription_id, resource_group, workspace)
